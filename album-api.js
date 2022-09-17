@@ -1,3 +1,6 @@
+const toogleSpinner = (displayStyle) => {
+    document.getElementById('spinner').style.display = displayStyle;
+}
 const loadData = () => {
     fetch('https://jsonplaceholder.typicode.com/photos')
         .then(res => res.json())
@@ -22,6 +25,7 @@ const getData = (data) => {
         </a>
              `;
         allPotosContainer.appendChild(div);
+        toogleSpinner('none');
     });
 }
 const getDetails = (id) => {
@@ -31,7 +35,7 @@ const getDetails = (id) => {
         .then(res => res.json())
         .then(data => {
             detailsContainer.innerHTML = `
-            <div onclick="getDetails(${data.id})" class="card p-2">
+            <div class="card p-2">
                 <img class="card-img-top"
                     src="${data.thumbnailUrl}"
                     alt="" srcset="">
@@ -43,6 +47,8 @@ const getDetails = (id) => {
         });
 
 }
-const spinner = () => {
-    document.getElementById('spinner').style.display = 'none';
-}
+
+// const spinner = () => {
+//     document.getElementById('spinner').style.display = 'none';
+// }
+
