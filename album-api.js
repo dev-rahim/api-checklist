@@ -13,11 +13,13 @@ const getData = (data) => {
         div.classList.add('col-4');
         div.classList.add('w-25');
         div.innerHTML = `
+        <a class="nav-link" href="#details">
         <div onclick="getDetails(${element.id})" class="card p-2">
             <img class="card-img-top"
                 src="${element.thumbnailUrl}"
                 alt="" srcset="">
         </div>
+        </a>
              `;
         allPotosContainer.appendChild(div);
     });
@@ -30,14 +32,17 @@ const getDetails = (id) => {
         .then(data => {
             detailsContainer.innerHTML = `
             <div onclick="getDetails(${data.id})" class="card p-2">
-            <img class="card-img-top"
-                src="${data.thumbnailUrl}"
-                alt="" srcset="">
-            <div class="card-body">
-                <h3 class="card-title">${data.title}</h3>
+                <img class="card-img-top"
+                    src="${data.thumbnailUrl}"
+                    alt="" srcset="">
+                <div class="card-body">
+                    <h3 class="card-title">${data.title}</h3>
+                </div>
             </div>
-        </div>
             `;
         });
 
+}
+const spinner = () => {
+    document.getElementById('spinner').style.display = 'none';
 }
