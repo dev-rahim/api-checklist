@@ -43,9 +43,28 @@ const addThenAdd = (number1, number2) => {
     const second = number2 + 7;
     return first + second;
 }
-console.log(addThenAdd(3, 13));
+// console.log(addThenAdd(3, 13));
 // 4. map divide each element by 7
-
+const numbers = [12, 35, 2, 5, 85, 66, 85, 96, 32, 52];
+const deviedByTow = numbers.map(number => number / 2);
+// console.log(deviedByTow);
 // 5. map, forEach, filter, find
+// forEach
+numbers.forEach(element => {
+    // console.log(element);
+});
+// filter
+const filterNumbers = numbers.filter(number => number < 50);
+// console.log(filterNumbers);
+// find
+const findSomething = numbers.find(number => number === 85)
+console.log(findSomething);
 
 // 6. desctructuring on object and array
+// object
+const { name, money } = myFriend;
+console.log(name, `+`, money);
+
+// array
+const [a, b, c, d, e, f] = numbers;
+console.log(a, b, c, d, e, f);
